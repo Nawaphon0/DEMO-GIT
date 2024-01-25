@@ -15,21 +15,15 @@
 <body>
 
 <script>
-    // รับค่าน้ำหนักและส่วนสูงจากผู้ใช้
     var weightInput = prompt("กรุณากรอกน้ำหนัก (kg):");
     var heightInput = prompt("กรุณากรอกส่วนสูง (cm):");
 
-    // แปลงค่าน้ำหนักและส่วนสูงเป็นตัวเลข
     var weight = parseFloat(weightInput);
-    var height = parseFloat(heightInput) / 100; // แปลงเซนติเมตรเป็นเมตร
-
-    // คำนวณ BMI
+    var height = parseFloat(heightInput) / 100; 
     var bmi = weight / (height * height);
 
-    // แสดงค่า BMI บนหน้าเว็บ
     document.write("<h2>ค่า BMI ของคุณคือ: " + bmi.toFixed(2) + "</h2>");
 
-    // ตรวจสอบช่วงของ BMI และแสดงข้อความที่เกี่ยวข้อง
     if (bmi < 18.5) {
         document.write("<p>ผอม</p>");
     } else if (bmi >= 18.5 && bmi <= 22.9) {
