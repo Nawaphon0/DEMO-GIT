@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // รับค่าน้ำหนักและส่วนสูงจากผู้ใช้
+    var weightInput = prompt("กรุณากรอกน้ำหนัก (kg):");
+    var heightInput = prompt("กรุณากรอกส่วนสูง (cm):");
+
+    // แปลงค่าน้ำหนักและส่วนสูงเป็นตัวเลข
+    var weight = parseFloat(weightInput);
+    var height = parseFloat(heightInput) / 100; // แปลงเซนติเมตรเป็นเมตร
+
+    // คำนวณ BMI
+    var bmi = weight / (height * height);
+
+    // แสดงค่า BMI บนหน้าเว็บ
+    document.write("<h2>ค่า BMI ของคุณคือ: " + bmi.toFixed(2) + "</h2>");
+
+    // ตรวจสอบช่วงของ BMI และแสดงข้อความที่เกี่ยวข้อง
+    if (bmi < 18.5) {
+        document.write("<p>ผอม</p>");
+    } else if (bmi >= 18.5 && bmi <= 22.9) {
+        document.write("<p>ปกติ</p>");
+    } else if (bmi >= 23 && bmi <= 24.9) {
+        document.write("<p>ท้วม</p>");
+    } else if (bmi >= 25 && bmi <= 29.9) {
+        document.write("<p>อ้วน</p>");
+    } else {
+        document.write("<p>อ้วนมาก</p>");
+    }
+</script>
+
+</body>
+</html>
